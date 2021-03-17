@@ -2,8 +2,6 @@ const dynamodb = require('aws-sdk/clients/dynamodb');
 
 const docClient = new dynamodb.DocumentClient();
 
-const tableName = process.env.SAMPLE_TABLE;
-
 exports.fetchItemsHandler = async (event) => {
     const { httpMethod, path } = event;
     if (httpMethod !== 'GET') {
@@ -23,13 +21,13 @@ exports.fetchItemsHandler = async (event) => {
         }
     })
  
-    const params = { TableName: tableName };
+    const params = { TableName: 'backend-SampleTable-1CK9YVUT9J173' };
     const { Items } = await docClient.scan(params).promise();
 
     const difference = _.differenceWith(finalData, Items, _.isEqual);
 
     for(item of difference) {
-        const params1 = { TableName: tableName, Item: {
+        const params1 = { TableName: 'backend-SampleTable-1CK9YVUT9J173', Item: {
             id: item.sku,
             ...item
         }};

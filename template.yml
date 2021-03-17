@@ -26,7 +26,7 @@ Resources:
             TableName: !Ref SampleTable
       Environment:
         Variables:
-          SAMPLE_TABLE: !Ref backend-SampleTable-1CK9YVUT9J173
+          SAMPLE_TABLE: !Ref SampleTable
       Events:
         Api:
           Type: Api
@@ -48,7 +48,7 @@ Resources:
             TableName: !Ref SampleTable
       Environment:
         Variables:
-          SAMPLE_TABLE: !Ref backend-SampleTable-1CK9YVUT9J173
+          SAMPLE_TABLE: !Ref SampleTable
       Events:
         Api:
           Type: Api
@@ -70,7 +70,7 @@ Resources:
             TableName: !Ref SampleTable
       Environment:
         Variables:
-          SAMPLE_TABLE: !Ref backend-SampleTable-1CK9YVUT9J173
+          SAMPLE_TABLE: !Ref SampleTable
       Events:
         Api:
           Type: Api

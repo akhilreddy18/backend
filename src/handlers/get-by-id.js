@@ -2,8 +2,6 @@ const dynamodb = require('aws-sdk/clients/dynamodb');
 
 const docClient = new dynamodb.DocumentClient();
 
-const tableName = process.env.SAMPLE_TABLE;
-
 exports.getByIdHandler = async (event) => {
     const { httpMethod, path, pathParameters } = event;
     if (httpMethod !== 'GET') {
@@ -13,7 +11,7 @@ exports.getByIdHandler = async (event) => {
     const { id } = pathParameters;
 
     const params = {
-        TableName: tableName,
+        TableName: 'backend-SampleTable-1CK9YVUT9J173',
         Key: { id },
     };
     const { Item } = await docClient.get(params).promise();
