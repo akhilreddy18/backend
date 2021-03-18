@@ -63,7 +63,7 @@ Resources:
       Handler: src/handlers/fetch-items.fetchItemsHandler
       Runtime: nodejs10.x
       MemorySize: 128
-      Timeout: 60
+      Timeout: 1200
       Description: A simple example includes a HTTP post method to add one item to a DynamoDB table.
       Policies:
         - DynamoDBCrudPolicy:
